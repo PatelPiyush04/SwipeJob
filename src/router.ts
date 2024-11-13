@@ -1,8 +1,11 @@
-import { createStaticNavigation, StaticParamList } from "@react-navigation/native";
+import {
+  createStaticNavigation,
+  StaticParamList,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DashboardScreen from "./screens/dashboard/screen";
 import LoginScreen from "./screens/login/screen";
-import {  useIsSignedIn, useIsSignedOut } from "./context/auth/useAuth";
+import { useIsSignedIn, useIsSignedOut } from "./context/auth/useAuth";
 
 type RootStackParamList = StaticParamList<typeof RootStack>;
 
@@ -16,14 +19,13 @@ const RootStack = createNativeStackNavigator({
   screens: {
     LoggedIn: {
       if: useIsSignedIn,
-      screen: DashboardScreen
+      screen: DashboardScreen,
     },
     LoggedOut: {
       if: useIsSignedOut,
-      screen: LoginScreen
+      screen: LoginScreen,
     },
   },
 });
 
 export default createStaticNavigation(RootStack);
-

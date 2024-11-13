@@ -4,8 +4,8 @@ import { Button, Text, View } from "react-native";
 
 export default function ProfileScreen() {
   const handleSignOut = () => {
-    AsyncStorage.removeItem('workerId');
-  }
+    AsyncStorage.removeItem("workerId");
+  };
 
   return (
     <View>
