@@ -2,13 +2,14 @@
 import * as React from 'react';
 import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/home/screen';
-import SearchScreen from './src/screens/search/screen';
+import DashboardScreen from './src/screens/dashboard/screen';
+import LoginScreen from './src/screens/login/screen';
 
 const RootStack = createNativeStackNavigator({
+  initialRouteName: 'Login',
   screens: {
-    Home: HomeScreen,
-    Search: SearchScreen
+    Dashboard: DashboardScreen,
+    Login: LoginScreen,
   },
 });
 
