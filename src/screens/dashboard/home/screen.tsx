@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { useAuth } from "../../../context/auth/useAuth";
+import { JobDetailsScreen } from "../../JobDetailsScreen";
 
 // {"address": {"formattedAddress": "1 Downing St, Chicago, IL 60654, USA", "zoneId": "America/Chicago"}, "email": "jim.rose@gmail.com", "firstName": "Jim", "lastName": "Rose", "maxJobDistance": 20, "phoneNumber": "5096290220", "workerId": "7f90df6e-b832-44e2-b624-3143d428001f"}
 
@@ -30,11 +31,11 @@ export default function HomeScreen() {
   useEffect(() => {
     const run = async () => {
       const response = await fetch(
-        `https://test.swipejobs.com/api/worker/${workerId}/profile`,
+        `https://test.swipejobs.com/api/worker/${workerId}/profile`
       );
 
       const reponse2 = await fetch(
-        `https://test.swipejobs.com/api/worker/${workerId}/matches`,
+        `https://test.swipejobs.com/api/worker/${workerId}/matches`
       );
 
       const hello = await response.json();
@@ -50,9 +51,10 @@ export default function HomeScreen() {
     run();
   }, [workerId]);
 
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen 1</Text>
-    </View>
-  );
+  // return (
+  //   <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+  //     <Text>Home Screen 1</Text>
+  //   </View>
+  // );
+  return <JobDetailsScreen />;
 }
