@@ -1,6 +1,6 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
-import { JobCard } from '../components/organisms/JobCard';
+import React from "react";
+import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import { JobCard } from "../components/organisms/JobCard";
 
 export const JobDetailsScreen: React.FC = () => {
   const jobData = {
@@ -11,31 +11,31 @@ export const JobDetailsScreen: React.FC = () => {
     hourlyRate: 13.5,
     shiftDates: [
       "APR 7, WED 8:00 AM - 10:00PM PDT",
-      "APR 7, WED 8:00 AM - 10:00PM PDT"
+      "APR 7, WED 8:00 AM - 10:00PM PDT",
     ],
     location: "123 Main Street, Tacoma, WA 98409",
     requirements: ["Safety Vest", "Hard Hat"],
-    reportTo: "Dave (123) 546 987"
+    reportTo: "Dave (123) 546 987",
   };
 
   const handleAccept = () => {
     // Handle job acceptance
-    console.log('Job accepted');
+    console.log("Job accepted");
   };
 
   const handleDecline = () => {
     // Handle job decline
-    console.log('Job declined');
+    console.log("Job declined");
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView 
+      <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollViewContent}
         showsVerticalScrollIndicator={false}
       >
-        <JobCard 
+        <JobCard
           job={jobData}
           onAccept={handleAccept}
           onDecline={handleDecline}
@@ -48,7 +48,7 @@ export const JobDetailsScreen: React.FC = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: "#f5f5f5",
   },
   scrollView: {
     flex: 1,
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 32,
   },
-}); 
+});

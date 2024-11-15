@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { useAuth } from "../../../context/auth/useAuth";
 import { JobDetailsScreen } from "../../JobDetailsScreen";
+import useQuery from "../../../hooks/useQuery";
 
 // {"address": {"formattedAddress": "1 Downing St, Chicago, IL 60654, USA", "zoneId": "America/Chicago"}, "email": "jim.rose@gmail.com", "firstName": "Jim", "lastName": "Rose", "maxJobDistance": 20, "phoneNumber": "5096290220", "workerId": "7f90df6e-b832-44e2-b624-3143d428001f"}
 
@@ -28,28 +29,34 @@ export default function HomeScreen() {
   const [list, setList] = useState([]);
   const { workerId } = useAuth();
 
-  useEffect(() => {
-    const run = async () => {
-      const response = await fetch(
-        `https://test.swipejobs.com/api/worker/${workerId}/profile`
-      );
+  const { data, isLoading } = useQuery(`worker/${workerId}/matches`);
 
-      const reponse2 = await fetch(
-        `https://test.swipejobs.com/api/worker/${workerId}/matches`
-      );
+  console.log("data", data);
 
-      const hello = await response.json();
+  // useEffect(() => {
+  //   const run = async () => {
+  //     const response = await fetch(
+  //       `https://test.swipejobs.com/api/worker/${workerId}/profile`,
+  //     );
 
-      const hello2 = await reponse2.json();
+  //     const reponse2 = await fetch(
+  //       `https://test.swipejobs.com/api/worker/${workerId}/matches`,
+  //     );
 
-      setList(hello);
+  //     const hello = await response.json();
 
-      console.log("hello", hello);
-      console.log("hello2", hello2);
-    };
+  //     const hello2 = await reponse2.json();
 
-    run();
-  }, [workerId]);
+  //     setList(hello);
+
+  //     console.log("hello", hello);
+  //     console.log("hello2", hello2);
+  //   };
+
+  //   run();
+  // }, [workerId]);
+
+  console.log("list", list);
 
   // return (
   //   <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
