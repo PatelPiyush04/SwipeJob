@@ -1,18 +1,10 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React from "react";
-import { Button, Text, View } from "react-native";
+import React, { useContext } from "react";
 import { UserProfileScreen } from "../../UserProfileScreen";
+import { SignInContext } from "../../../context/auth/context";
 
 export default function ProfileScreen() {
-  const handleSignOut = () => {
-    AsyncStorage.removeItem("workerId");
-  };
+  const { clearWorkerId } = useContext(SignInContext);
 
-  // return (
-  //   <View>
-  //     <Text>Profile</Text>
-  //     <Button title="Sign Out" onPress={handleSignOut} />
-  //   </View>
-  // );
-  return <UserProfileScreen />;
+  return <UserProfileScreen logout={clearWorkerId} />;
 }

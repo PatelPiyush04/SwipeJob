@@ -16,8 +16,20 @@ export default function App() {
     run();
   }, []);
 
+  const handleSetWorkerId = async (workerId: string) => {
+    await AsyncStorage.setItem("workerId", workerId);
+    setWorkerId(workerId);
+  };
+
+  const clearWorkerId = async () => {
+    await AsyncStorage.removeItem("workerId");
+    setWorkerId(undefined);
+  };
+
   return (
-    <SignInContext.Provider value={{ workerId }}>
+    <SignInContext.Provider
+      value={{ workerId, setWorkerId: handleSetWorkerId, clearWorkerId }}
+    >
       <Router />
     </SignInContext.Provider>
   );
