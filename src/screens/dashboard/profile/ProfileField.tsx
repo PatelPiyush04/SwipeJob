@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text } from './Text';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text } from "../../../components/label";
 
 interface ProfileFieldProps {
   label: string;
@@ -10,8 +10,12 @@ interface ProfileFieldProps {
 export const ProfileField: React.FC<ProfileFieldProps> = ({ label, value }) => {
   return (
     <View style={styles.container}>
-      <Text variant="label" style={styles.label}>{label}</Text>
-      <Text variant="body" style={styles.value}>{value}</Text>
+      <Text variant="label" style={styles.label}>
+        {label}
+      </Text>
+      <Text variant="body" style={styles.value}>
+        {value}
+      </Text>
     </View>
   );
 };
@@ -21,10 +25,10 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   label: {
-    color: '#666',
+    color: "#666",
     marginBottom: 4,
   },
   value: {
-    color: '#000',
+    color: "#000",
   },
-}); 
+});

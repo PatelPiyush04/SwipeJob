@@ -31,7 +31,7 @@ export default function HomeScreen() {
 
   const { data, isLoading } = useQuery(`worker/${workerId}/matches`);
 
-  console.log("data", data);
+  // console.log("data", data);
 
   // useEffect(() => {
   //   const run = async () => {
@@ -56,7 +56,7 @@ export default function HomeScreen() {
   //   run();
   // }, [workerId]);
 
-  console.log("list", list);
+  // console.log("list", list);
 
   // return (
   //   <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

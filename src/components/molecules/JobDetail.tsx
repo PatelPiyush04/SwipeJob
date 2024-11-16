@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text } from '../atoms/Text';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text } from "../../components/label";
 
 interface JobDetailProps {
   label: string;
@@ -22,13 +22,13 @@ export const JobDetail: React.FC<JobDetailProps> = ({ label, value, icon }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    borderBottomColor: "#eee",
   },
   icon: {
     marginRight: 12,
   },
-}); 
+});

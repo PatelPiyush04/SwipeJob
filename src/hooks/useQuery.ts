@@ -5,8 +5,6 @@ const useQuery = <T>(path: string) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | undefined>(undefined);
 
-  console.log("workerId", path);
-
   useEffect(() => {
     const run = async () => {
       setIsLoading(true);

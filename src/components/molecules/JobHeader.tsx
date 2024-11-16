@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import { Text } from '../atoms/Text';
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
+import { Text } from "../../components/label";
 
 interface JobHeaderProps {
   title: string;
@@ -8,7 +8,11 @@ interface JobHeaderProps {
   imageUrl?: string;
 }
 
-export const JobHeader: React.FC<JobHeaderProps> = ({ title, company, imageUrl }) => {
+export const JobHeader: React.FC<JobHeaderProps> = ({
+  title,
+  company,
+  imageUrl,
+}) => {
   return (
     <View style={styles.container}>
       {imageUrl && <Image source={{ uri: imageUrl }} style={styles.image} />}
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   image: {
-    width: '100%',
+    width: "100%",
     height: 200,
     borderRadius: 8,
     marginBottom: 16,
@@ -33,4 +37,4 @@ const styles = StyleSheet.create({
   textContainer: {
     gap: 8,
   },
-}); 
+});

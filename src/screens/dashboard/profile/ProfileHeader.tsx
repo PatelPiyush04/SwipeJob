@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Avatar } from '../atoms/Avatar';
-import { Text } from '../atoms/Text';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Avatar } from "./Avatar";
+import { Text } from "../../../components/label";
 
 interface ProfileHeaderProps {
   firstName: string;
@@ -31,20 +31,20 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 12,
     marginBottom: 16,
   },
   info: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 16,
   },
   name: {
     marginBottom: 4,
   },
   email: {
-    color: '#666',
+    color: "#666",
   },
-}); 
+});

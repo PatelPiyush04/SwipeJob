@@ -1,9 +1,9 @@
-export interface UserAddress {
+export type UserAddress = {
   formattedAddress: string;
   zoneId: string;
-}
+};
 
-export interface UserProfile {
+export type UserProfile = {
   address: UserAddress;
   email: string;
   firstName: string;
@@ -11,4 +11,4 @@ export interface UserProfile {
   maxJobDistance: number;
   phoneNumber: string;
   workerId: string;
-} 
+};

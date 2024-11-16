@@ -1,1 +1,4 @@
-const useMutation = (mutation: MutationFunction, options: MutationOptions = {}) => {
+const useMutation = (
+  mutation: MutationFunction,
+  options: MutationOptions = {},
+) => {};

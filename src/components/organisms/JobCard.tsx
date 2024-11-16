@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { JobHeader } from '../molecules/JobHeader';
-import { JobDetail } from '../molecules/JobDetail';
-import { Button } from '../atoms/Button';
-import { MaterialIcons } from '@expo/vector-icons'; // Assuming using Expo
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { JobHeader } from "../molecules/JobHeader";
+import { JobDetail } from "../molecules/JobDetail";
+import { Button } from "../../components/button";
+import { MaterialIcons } from "@expo/vector-icons"; // Assuming using Expo
 
 interface JobCardProps {
   job: {
@@ -21,21 +21,22 @@ interface JobCardProps {
   onDecline: () => void;
 }
 
-export const JobCard: React.FC<JobCardProps> = ({ job, onAccept, onDecline }) => {
+export const JobCard: React.FC<JobCardProps> = ({
+  job,
+  onAccept,
+  onDecline,
+}) => {
   return (
     <View style={styles.container}>
-      <JobHeader 
+      <JobHeader
         title={job.title}
         company={job.company}
         imageUrl={job.imageUrl}
       />
-      
+
       <View style={styles.detailsContainer}>
         <View style={styles.rateDistance}>
-          <JobDetail
-            label="Distance"
-            value={`${job.distance} miles`}
-          />
+          <JobDetail label="Distance" value={`${job.distance} miles`} />
           <JobDetail
             label="Hourly Rate"
             value={`$${job.hourlyRate.toFixed(2)}`}
@@ -44,7 +45,7 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onAccept, onDecline }) =>
 
         <JobDetail
           label="Shift Dates"
-          value={job.shiftDates.join('\n')}
+          value={job.shiftDates.join("\n")}
           icon={<MaterialIcons name="calendar-today" size={24} />}
         />
 
@@ -56,7 +57,7 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onAccept, onDecline }) =>
 
         <JobDetail
           label="Requirements"
-          value={job.requirements.join('\n')}
+          value={job.requirements.join("\n")}
           icon={<MaterialIcons name="build" size={24} />}
         />
 
@@ -68,16 +69,8 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onAccept, onDecline }) =>
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button 
-          title="No Thanks" 
-          variant="secondary" 
-          onPress={onDecline}
-        />
-        <Button 
-          title="I'll Take it" 
-          variant="primary" 
-          onPress={onAccept}
-        />
+        <Button title="No Thanks" variant="secondary" onPress={onDecline} />
+        <Button title="I'll Take it" variant="primary" onPress={onAccept} />
       </View>
     </View>
   );
@@ -85,22 +78,22 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onAccept, onDecline }) =>
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 12,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   detailsContainer: {
     gap: 16,
   },
   rateDistance: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#e6fff9',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#e6fff9",
     padding: 16,
   },
   buttonContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: 16,
     gap: 12,
   },
-}); 
+});

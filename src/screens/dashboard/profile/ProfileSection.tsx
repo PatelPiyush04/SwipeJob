@@ -1,19 +1,24 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text } from '../atoms/Text';
-import { ProfileField } from '../atoms/ProfileField';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text } from "../../../components/label";
+import { ProfileField } from "./ProfileField";
 
 interface ProfileSectionProps {
   title: string;
   fields: Array<{ label: string; value: string }>;
 }
 
-export const ProfileSection: React.FC<ProfileSectionProps> = ({ title, fields }) => {
+export const ProfileSection: React.FC<ProfileSectionProps> = ({
+  title,
+  fields,
+}) => {
   return (
     <View style={styles.container}>
-      <Text variant="subheader" style={styles.title}>{title}</Text>
+      <Text variant="subheader" style={styles.title}>
+        {title}
+      </Text>
       {fields.map((field, index) => (
-        <ProfileField 
+        <ProfileField
           key={`${title}-${index}`}
           label={field.label}
           value={field.value}
@@ -25,7 +30,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({ title, fields })
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 16,
     borderRadius: 12,
     marginBottom: 16,
@@ -33,4 +38,4 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 16,
   },
-}); 
+});
