@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
-import { JobCard } from "../components/organisms/JobCard";
+import { JobCard } from "../../../components/organisms/JobCard";
 
 export const JobDetailsScreen: React.FC = () => {
   const jobData = {
